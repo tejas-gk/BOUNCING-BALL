@@ -33,17 +33,17 @@ function draw() {
 }
 
 //For controles
-function mass1() {
-	var valu1 = document.getElementById('val1').value;
+function massvalue() {
+	var valu1 = document.getElementById('mass_value').value;
 	mass = valu1;
 }
 
-function gravity1() {
-	var valu2 = document.getElementById('val2').value;
+function gravityvalue() {
+	var valu2 = document.getElementById('gravity_value').value;
 	gravity = valu2;
 }
 
-function size1() {
-	var valu3 = document.getElementById('val3').value;
+function sizevalue() {
+	var valu3 = document.getElementById('size_value').value;
 	size = valu3;
 }
