@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUNCING BALLL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">BOUNCING BALL</a>
+      <form class="form-inline my-2 my-lg-0 mx-2">
+        <input class="form-control mr-sm-2" type="text" placeholder="Mass Value          0 - 0.9" id="val1">
+        <button type="button" class="btn btn-dark" onclick="mass1();">Mass</button>
+      </form>
+      <form class="form-inline my-2 my-lg-0 mx-2">
+        <input class="form-control mr-sm-2" type="text" placeholder="Gravity Value         1 - 10" aria-label="Search" id="val2">
+        <button type="button" class="btn btn-dark" onclick="gravity1();">Gravity</button>
+      </form>
+      <form class="form-inline my-2 my-lg-0 mx-2">
+        <input class="form-control mr-sm-2" type="text" placeholder="Size Value" aria-label="Search" id="val3">
+        <button type="button" class="btn btn-dark"  onclick="size1();">Size</button>
+      </form>
+  </nav>
+  <br>
+
+    <script src="sketch.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+  </body>
+</html>
