@@ -1,6 +1,6 @@
 let x;
 let y;
-let size = 20;
+
 let gravity = 1;
 let time = 0;
 let speed = 0;
@@ -46,12 +46,7 @@ function gravity_physics() {
 
 function wind_physics() {
 	x += wind_speed;
-}
 
-function drag_physics() {
-
-	
-}
 
 function edge() {
 	if (y > (height - (size / 2))) {
