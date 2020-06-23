@@ -64,10 +64,18 @@ function edge() {
 		if (x > (width - (size / 2))) {
 			time = time * -1;
 			wind_speed *= -1;
+			time = time * -1;
+		    speed = weight * time;
+		    time -= speed;
+		    y += speed;
 		}
 
 		if (x <(size / 2)) {
 			time = time * -1;
 			wind_speed *= -1;
+			time = time * -1;
+		    speed = weight * time;
+		    time -= speed;
+		    y += speed;
 		}
 }
