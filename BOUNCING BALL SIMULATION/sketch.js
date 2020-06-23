@@ -6,7 +6,7 @@ let time = 0;
 let speed = 0;
 let mass = 0.1;
 let wind_speed =0;
-let drag=4;
+let drag=.2;
 
 function setup() {
 	createCanvas(800,  500);
@@ -19,6 +19,7 @@ function draw() {
 
 		gravity_physics();
 		wind_physics();
+	 drag_physics();
 
 		stroke(255, 0, 0, (255 / 1.5));
 		fill(255, 0, 0, (255 / 1.5));
@@ -50,8 +51,12 @@ function wind_physics() {
 }
 
 function drag_physics() {
-	y+=drag;
+y-=drag;
+time++;
+weight = gravity * mass;
+	speed = weight * time;
 
+edge();
 }
 
 function edge() {
