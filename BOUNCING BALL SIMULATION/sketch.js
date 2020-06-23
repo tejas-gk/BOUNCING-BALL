@@ -1,49 +1,58 @@
-let x = (800 / 2);
-let y = 10;
+let x;
+let y;
 let size = 20;
 let gravity = 1;
 let time = 0;
-let distance = 0;
+let speed = 0;
 let mass = 0.1;
 
 function setup() {
 	createCanvas(800,  500);
+	x = (width / 2);
+	y = (size / 2);
 }
 
 function draw() {
 	background(240);
 
-		//Physics applied
-		weight = gravity * mass;
-	    time++;
-	    distance = weight * time;
-	    y += distance;
-	    if (y > (height - (size / 2))){
-		    time = time * -1;
-		    distance = weight * time;
-		    time -= distance;
-		    y += distance;
+		gravity_physics();
 
-		}
-
-		//Drawing BALL
 		stroke(255, 0, 0, (255 / 1.5));
 		fill(255, 0, 0, (255 / 1.5));
 		ellipse(x, y, size, size);
 }
 
-//For controles
 function massvalue() {
-	var valu1 = document.getElementById('mass_value').value;
-	mass = valu1;
+	mass = document.getElementById('mass_value').value;
 }
 
 function gravityvalue() {
-	var valu2 = document.getElementById('gravity_value').value;
-	gravity = valu2;
+	gravity = document.getElementById('gravity_value').value;
 }
 
 function sizevalue() {
-	var valu3 = document.getElementById('size_value').value;
-	size = valu3;
+	size = document.getElementById('size_value').value;
+}
+
+function gravity_physics() {
+		time++;
+		weight = gravity * mass;
+	    speed = weight * time;
+	    y += speed;
+	    if (y > (height - (size / 2))) {
+		    time = time * -1;
+		    speed = weight * time;
+		    time -= speed;
+		    y += speed;
+		}
+}
+
+function wind_physics() {
+
+
+}
+
+function drag_physics() {
+
+	
 }
