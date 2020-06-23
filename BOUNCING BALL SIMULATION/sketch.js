@@ -39,9 +39,9 @@ function sizevalue() {
 function gravity_physics() {
 	time++;
 	weight = gravity * mass;
-    speed = weight * time;
-    y += speed;
-    edge();
+  	  speed = weight * time;
+  	  y += speed;
+  	  edge();
 }
 
 function wind_physics() {
