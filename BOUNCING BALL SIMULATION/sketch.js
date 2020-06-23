@@ -6,6 +6,14 @@ let time = 0;
 let distance = 0;
 let mass = 0.1;
 
+
+var density=mass/size;
+
+function again(){
+	document.getElementsByClassName('again').setup();
+
+}
+
 function setup() {
 	createCanvas(800,  500);
 }
@@ -30,7 +38,15 @@ function draw() {
 		stroke(255, 0, 0, (255 / 1.5));
 		fill(255, 0, 0, (255 / 1.5));
 		ellipse(x, y, size, size);
+
+//formula for drag
+		 function drag(){
+		 		drag=(density)*96.04*4*3.14*(x,y)*(x,y);
+		}
 }
+
+
+
 
 //For controles
 function massvalue() {
