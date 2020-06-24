@@ -5,22 +5,25 @@ let gravity = 1;
 let time = 0;
 let speed = 0;
 let mass = 0.1;
-let wind_speed;
-let drag = 1;
+let wind_speed = 0;
+let drag = 100;
 
 function setup() {
 	createCanvas(800,  500);
 	x = (width / 2);
 	y = (size / 2);
-	wind_speed = random(0, 5);
 }
 
 function draw() {
+	print(y);
 	background(240);
 
 	gravity_physics();
-	wind_physics();
-	drag_physics();
+	if (mouseIsPressed) {
+		wind_physics_user();
+	}
+	wind_physics();	
+	drag_physics();	
 
 	stroke(255, 0, 0, (255 / 1.5));
 	fill(255, 0, 0, (255 / 1.5));
@@ -52,8 +55,14 @@ function wind_physics() {
 	edge();
 }
 
+function wind_physics_user() {
+	wind_speed += -1;
+	x += wind_speed;
+	edge();
+}
+
 function drag_physics() {
-	speed-=drag;
+	speed -= drag;
 	time++;
 	weight = gravity * mass;
 	speed = weight * time;
@@ -79,7 +88,6 @@ function edge() {
 			time = time * -1;
 		    speed = weight * time;
 		    time -= speed;
-		    y += speed;
 		}
 
 		if (x <(size / 2)) {
@@ -88,6 +96,5 @@ function edge() {
 			time = time * -1;
 		    speed = weight * time;
 		    time -= speed;
-		    y += speed;
 		}
 }
